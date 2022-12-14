@@ -9,9 +9,18 @@ public class SubwayMap {
 
     public SubwayMap(Scanner scanner){
         this.scanner = scanner;
+        initData();
     }
 
     public void play() {
 
     }
+
+    public void initData() {
+        initStation();
+        initLine();
+    }
+
+    public void initStation() {}
+    public void initLine() {}
 }
