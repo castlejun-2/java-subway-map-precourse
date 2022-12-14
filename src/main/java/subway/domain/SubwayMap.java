@@ -15,6 +15,8 @@ public class SubwayMap {
     public void play() {
         while (true) {
             String inputData = InputView.getMainCmd(scanner);
+            if (isQuit(inputData))
+                break;
         }
     }
 
@@ -32,5 +34,11 @@ public class SubwayMap {
         String lines[] = {"2호선", "3호선", "신분당선"};
         for (String line : lines)
             lineRepository.addLine(new Line(line));
+    }
+
+    public boolean isQuit(String inputData) {
+        if (inputData.equals("Q"))
+            return true;
+        return false;
     }
 }
