@@ -14,7 +14,6 @@ public class SubwayMap {
 
     public void play() {
         while (true) {
-            OutputView.printArray(Message.MAIN_MESSAGE);
             String inputData = InputView.getMainCmd(scanner);
         }
     }
