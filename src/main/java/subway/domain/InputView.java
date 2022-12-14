@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class InputView {
     public static String getMainCmd(Scanner scanner) {
+        OutputView.printMain();
         String inputData = scanner.nextLine();
         try {
             Validator.checkMainCommand(inputData);
