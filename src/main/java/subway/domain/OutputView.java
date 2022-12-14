@@ -6,4 +6,8 @@ public class OutputView {
             System.out.println(msg[i]);
         System.out.println("");
     }
+
+    public static void printError(String errorMsg) {
+        System.out.println("[ERROR] "+errorMsg);
+    }
 }
