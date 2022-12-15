@@ -2,20 +2,21 @@ package subway.view;
 
 import subway.domain.Station;
 import subway.utils.MainMenu;
+import subway.utils.ServiceMenu;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class OutputView {
     public static void printMain() {
-        print("메인 화면");
+        println("메인 화면");
         for (MainMenu mainMenu : MainMenu.values()) {
             System.out.println(mainMenu.getCommand()+". "+mainMenu.getMessage());
         }
         System.out.println("");
     }
 
-    public static void print(String msg) {
+    public static void println(String msg) {
         System.out.println("## "+msg);
     }
 
@@ -30,5 +31,9 @@ public class OutputView {
 
     public static void printError(String errorMsg) {
         System.out.println("[ERROR] "+errorMsg);
+    }
+
+    public static void printServiceMenu(String input) {
+        println(ServiceMenu.findMessageByCommand(input)+" 화면");
     }
 }
