@@ -2,7 +2,7 @@ package subway.domain;
 
 import subway.view.InputView;
 
-import java.util.Scanner;
+import java.util.*;
 
 public class SubwayMap {
     private Scanner scanner;
@@ -34,8 +34,15 @@ public class SubwayMap {
     }
     public void initLine() {
         String lines[] = {"2호선", "3호선", "신분당선"};
-        for (String line : lines)
-            lineRepository.addLine(new Line(line));
+        int index = 0;
+        Station[][] stations = new Station[][]{{new Station("교대역"), new Station("강남역"), new Station("역삼역")},
+                {new Station("교대역"), new Station("남부터미널역"), new Station("양재역"), new Station("매봉역")},
+                {new Station("강남역"), new Station("양재역"), new Station("양재시민의숲역")}};
+        for (String line : lines) {
+            Line line1 = new Line(line);
+            line1.addStation(stations[index++]);
+            lineRepository.addLine(line1);
+        }
     }
 
     public boolean isQuit(String inputData) {
