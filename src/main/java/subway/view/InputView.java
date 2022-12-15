@@ -1,5 +1,8 @@
 package subway.view;
 
+import subway.domain.Line;
+import subway.domain.LineRepository;
+import subway.utils.Message;
 import subway.utils.Validator;
 import subway.view.OutputView;
 
