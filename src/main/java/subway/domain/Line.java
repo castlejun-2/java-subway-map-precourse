@@ -26,4 +26,8 @@ public class Line {
     public void addStationByIndex(Station station, int index) {
         stations.add(index,station);
     }
+
+    public void getLineInfo() {
+        OutputView.printLineInfo(getName(), stations);
+    }
 }
