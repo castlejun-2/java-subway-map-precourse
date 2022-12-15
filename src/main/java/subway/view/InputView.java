@@ -11,6 +11,7 @@ import java.util.Scanner;
 public class InputView {
     public static String getMainCmd(Scanner scanner) {
         OutputView.printMain();
+        OutputView.println(Message.SELECT_FUNCTION_MESSAGE);
         String inputData = scanner.nextLine();
         try {
             Validator.checkMainCommand(inputData);

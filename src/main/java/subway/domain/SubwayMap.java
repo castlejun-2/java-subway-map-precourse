@@ -19,6 +19,7 @@ public class SubwayMap {
             String inputData = InputView.getMainCmd(scanner);
             if (isQuit(inputData))
                 break;
+            new Service(inputData);
         }
     }
 
@@ -32,6 +33,7 @@ public class SubwayMap {
         for (String station : stations)
             stationRepository.addStation(new Station(station));
     }
+
     public void initLine() {
         String lines[] = {"2호선", "3호선", "신분당선"};
         int index = 0;
