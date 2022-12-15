@@ -1,6 +1,7 @@
-package subway.domain;
+package subway.view;
 
 import subway.utils.Validator;
+import subway.view.OutputView;
 
 import java.util.Scanner;
 

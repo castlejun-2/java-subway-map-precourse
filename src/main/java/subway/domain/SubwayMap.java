@@ -1,5 +1,7 @@
 package subway.domain;
 
+import subway.view.InputView;
+
 import java.util.Scanner;
 
 public class SubwayMap {

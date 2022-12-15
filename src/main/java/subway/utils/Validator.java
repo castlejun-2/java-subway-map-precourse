@@ -1,4 +1,7 @@
-package subway.domain;
+package subway.utils;
+
+import subway.utils.MainMenu;
+import subway.utils.Message;
 
 public class Validator {
     public static void checkMainCommand(String inputData) {

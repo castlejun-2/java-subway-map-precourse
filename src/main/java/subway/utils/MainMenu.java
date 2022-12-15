@@ -1,4 +1,4 @@
-package subway.domain;
+package subway.utils;
 
 public enum MainMenu {
     STATION("1","역 관리"),LINE("2","노선 관리"),SECTION("3","구간 관리"),MAP("4","지하철 노선도 출력"),END("Q","종료");
