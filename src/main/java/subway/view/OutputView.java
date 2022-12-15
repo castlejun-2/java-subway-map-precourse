@@ -1,5 +1,7 @@
 package subway.domain;
 
+import subway.utils.MainMenu;
+
 public class OutputView {
     public static void printMain() {
         System.out.println("## 메인 화면");
