@@ -5,7 +5,6 @@ import org.junit.jupiter.api.Test;
 
 import subway.domain.SubwayMap;
 
-
 import java.util.Scanner;
 
 import static org.assertj.core.api.Assertions.assertThat;
