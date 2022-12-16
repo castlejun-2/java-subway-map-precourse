@@ -19,8 +19,19 @@ public class SubwayMap {
             String inputData = InputView.getMainCmd(scanner);
             if (isQuit(inputData))
                 break;
-            new Service(inputData);
+            if (inputData.equals("4")) {
+                printLineInfo(lineRepository);
+                continue;
+            }
+            Service service = new Service(lineRepository, stationRepository);
+            syncData(service);
+            service.play(scanner, inputData);
         }
+    }
+
+    public void syncData(Service service) {
+        lineRepository = service.lineRepository();
+        stationRepository = service.stationRepository();
     }
 
     public void initData() {
@@ -51,5 +62,10 @@ public class SubwayMap {
         if (inputData.equals("Q"))
             return true;
         return false;
+    }
+
+    public void printLineInfo(LineRepository lineRepository) {
+        for (int i = 0; i < lineRepository.lines().size(); i++)
+            lineRepository.lines().get(i).getLineInfo();
     }
 }
