@@ -13,7 +13,7 @@ public enum ServiceMenuDetail {
         this.message = message;
     }
 
-    public String[] findMessageByCommand(String cmd) {
+    public static String[] findMessageByCommand(String cmd) {
         for (ServiceMenuDetail serviceMenuDetail : ServiceMenuDetail.values()) {
             if (serviceMenuDetail.getCommand().equals(cmd))
                 return serviceMenuDetail.getMessage();
