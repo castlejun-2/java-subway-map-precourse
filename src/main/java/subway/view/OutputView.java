@@ -1,8 +1,11 @@
 package subway.view;
 
+import subway.domain.LineRepository;
 import subway.domain.Station;
+import subway.domain.StationRepository;
 import subway.utils.MainMenu;
 import subway.utils.ServiceMenu;
+import subway.utils.ServiceMenuDetail;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,11 +24,17 @@ public class OutputView {
     }
 
     public static void printLineInfo(String LineName, List<Station> stations) {
-        System.out.println("[INFO] "+LineName);
+        printInfo(LineName);
         System.out.println("---");
-        List<String> station = new ArrayList<>();
+
         for (int i = 0; i < stations.size(); i++)
-            System.out.println("[INFO] "+stations.get(i).getName());
+            printInfo(stations.get(i).getName());
+        System.out.println("");
+    }
+
+    public static void printStationsInfo(StationRepository stationRepository) {
+        for (Station station : stationRepository.stations())
+            printInfo(station.getName());
         System.out.println("");
     }
 
@@ -35,5 +44,16 @@ public class OutputView {
 
     public static void printServiceMenu(String input) {
         println(ServiceMenu.findMessageByCommand(input)+" 화면");
+        printServiceMenuDetail(ServiceMenuDetail.findMessageByCommand(input));
+    }
+
+    public static void printServiceMenuDetail(String[] msg) {
+        for (int i = 0; i < msg.length; i++)
+            System.out.println(msg[i]);
+        System.out.println("");
+    }
+
+    public static void printInfo(String msg) {
+        System.out.println("[INFO] "+msg);
     }
 }
