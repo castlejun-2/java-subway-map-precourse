@@ -44,6 +44,13 @@ public class Validator {
         }
     }
 
+    public static void checkLineExist(String input, LineRepository lineRepository) {
+        for (Line line : LineRepository.lines()) {
+            if (line.getName().equals(input))
+                throw new IllegalArgumentException(Message.LINE_IS_EXIST);
+        }
+    }
+
     public static void checkStationExistLine(String input,StationRepository stationRepository, LineRepository lineRepository) {
         for (Line line : lineRepository.lines()) {
             for (Station station : line.stations()) {
@@ -54,6 +61,18 @@ public class Validator {
         boolean flag = true;
         for (Station station : stationRepository.stations()) {
             if (station.getName().equals(input)) {
+                flag = false;
+                break;
+            }
+        }
+        if (flag)
+            throw new IllegalArgumentException(Message.STATION_IS_NOT_EXIST);
+    }
+
+    public static void checkExistLine(String input, LineRepository lineRepository) {
+        boolean flag = true;
+        for (Line line : lineRepository.lines()) {
+            if (line.getName().equals(input)) {
                 flag = false;
                 break;
             }

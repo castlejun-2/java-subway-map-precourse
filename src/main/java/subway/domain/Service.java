@@ -1,5 +1,6 @@
 package subway.domain;
 
+import subway.domain.Controller.LineController;
 import subway.domain.Controller.StationController;
 import subway.utils.ServiceMenu;
 import subway.view.InputView;
@@ -32,8 +33,10 @@ public class Service {
             stationController.play(scanner);
             stationRepository = stationController.getNewStationRepository();
         }
-        //else if (input.equals("2"))
-        //    new LineController(inputDetail,lineRepository).play();
+        else if (input.equals("2")) {
+            LineController lineController = new LineController(inputDetail, lineRepository);
+            LineController.play(scanner);
+        }
         //else if (input.equals("3"))
         //    new SectionController(inputDetail,stationRepository,lineRepository).play();
     }
