@@ -27,6 +27,8 @@ public class Line {
         stations.add(index,station);
     }
 
+    public List<Station> stations() { return stations; };
+
     public void getLineInfo() {
         OutputView.printLineInfo(getName(), stations);
     }
