@@ -1,6 +1,7 @@
 package subway.domain.Controller;
 
 import subway.domain.LineRepository;
+import subway.domain.Station;
 import subway.domain.StationRepository;
 import subway.utils.Message;
 import subway.view.InputView;
@@ -29,7 +30,8 @@ public class StationController {
     }
 
     public static void registerStation(Scanner scanner) {
-        InputView.getStation(scanner, stationRepository);
+        String input = InputView.getStation(scanner, stationRepository);
+        stationRepository.addStation(new Station(input));
     }
 
     public static void getStationList() {
