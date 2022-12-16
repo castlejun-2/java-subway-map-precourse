@@ -1,5 +1,6 @@
 package subway.view;
 
+import subway.domain.Line;
 import subway.domain.LineRepository;
 import subway.domain.Station;
 import subway.domain.StationRepository;
@@ -35,6 +36,12 @@ public class OutputView {
     public static void printStationsInfo(StationRepository stationRepository) {
         for (Station station : stationRepository.stations())
             printInfo(station.getName());
+        System.out.println("");
+    }
+
+    public static void printLinesInfo(LineRepository lineRepository) {
+        for (Line line : lineRepository.lines())
+            printInfo(line.getName());
         System.out.println("");
     }
 
